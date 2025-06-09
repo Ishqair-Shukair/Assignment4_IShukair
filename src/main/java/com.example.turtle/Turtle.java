@@ -21,4 +21,13 @@ public class Turtle {
         pen.up();
         x = nx; y = ny;
     }
+
+    public void trace(double dist) {
+        double rad = Math.toRadians(heading);
+        double nx = x + dist * Math.cos(rad);
+        double ny = y + dist * Math.sin(rad);
+        pen.draw(canvas, x, y, nx, ny);
+        x = nx; y = ny;
+    }
+
 }
