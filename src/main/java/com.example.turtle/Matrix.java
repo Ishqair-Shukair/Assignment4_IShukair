@@ -13,3 +13,11 @@ public class Matrix {
         grid = new char[rows][cols];
         clear();
 }
+
+    public void clear() {
+        for (int r = 0; r < rows; r++)
+            for (int c = 0; c < cols; c++)
+                grid[r][c] = ' ';
+    }
+
+}
