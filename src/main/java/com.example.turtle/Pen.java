@@ -7,4 +7,5 @@ public class Pen {
 
     public void up() { down = false; }
 
+    public void down() { down = true; }
 }
