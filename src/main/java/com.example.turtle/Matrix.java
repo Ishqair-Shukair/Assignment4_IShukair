@@ -24,4 +24,12 @@ public class Matrix {
         if (r >= 0 && r < rows && c >= 0 && c < cols)
             grid[r][c] = ch;
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (char[] row : grid) {
+            sb.append(row).append('\n');
+        }
+        return sb.toString();
+    }
 }
