@@ -35,4 +35,8 @@ public class Turtle {
         if (heading < 0) heading += 360;
     }
 
+    public String show() {
+        return canvas.toString();
+    }
+
 }
