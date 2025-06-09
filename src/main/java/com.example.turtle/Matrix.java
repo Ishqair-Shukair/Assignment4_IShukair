@@ -20,4 +20,8 @@ public class Matrix {
                 grid[r][c] = ' ';
     }
 
+    public void setCell(int r, int c, char ch) {
+        if (r >= 0 && r < rows && c >= 0 && c < cols)
+            grid[r][c] = ch;
+    }
 }
