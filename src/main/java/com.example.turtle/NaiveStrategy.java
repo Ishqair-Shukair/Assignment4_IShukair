@@ -1,6 +1,9 @@
 package com.example.turtle;
 
-public class NaiveStrategy {
+/**
+ * A simple, non-optimized line-drawing strategy.
+ */
+public class NaiveStrategy implements DrawingStrategy {
     @Override
     public void drawLine(Matrix m, double x0, double y0, double x1, double y1) {
         double dx = x1 - x0, dy = y1 - y0;

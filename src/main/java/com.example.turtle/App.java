@@ -1,5 +1,8 @@
 package com.example.turtle;
 
+import com.example.turtle.command.UndoCommand;
+import com.example.turtle.command.RedoCommand;
+
 import com.example.turtle.command.*;
 import java.util.Scanner;
 import java.util.Stack;
@@ -22,6 +25,9 @@ public class App {
 
             try {
                 switch (tok[0]) {
+                    case "reset":
+                              cmd = new ResetCommand();
+                              break;
                     case "quit":   cmd = new QuitCommand(); break;
                     case "show":   cmd = new ShowCommand(); break;
                     case "move":   cmd = new MoveCommand(Double.parseDouble(tok[1])); break;
@@ -45,7 +51,13 @@ public class App {
 
             cmd.execute(turtle);
             // only record reversible commands
-            if (!(cmd instanceof ShowCommand) && !(cmd instanceof QuitCommand)) {
+            boolean isMeta = cmd instanceof ShowCommand
+                    || cmd instanceof QuitCommand
+                    || cmd instanceof UndoCommand
+                    || cmd instanceof RedoCommand
+                    || cmd instanceof ResetCommand;
+
+            if (!isMeta) {
                 undoStack.push(cmd);
                 redoStack.clear();
             }

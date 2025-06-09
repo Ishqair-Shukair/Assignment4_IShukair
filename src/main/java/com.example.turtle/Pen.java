@@ -2,7 +2,7 @@ package com.example.turtle;
 
 public class Pen {
 
-    private boolean down = false;
+    private boolean down = true;
     private DrawingStrategy strategy = new BresenhamStrategy();
 
     public void up() { down = false; }
