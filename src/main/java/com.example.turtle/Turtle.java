@@ -30,4 +30,9 @@ public class Turtle {
         x = nx; y = ny;
     }
 
+    public void turn(double delta) {
+        heading = (heading + delta) % 360;
+        if (heading < 0) heading += 360;
+    }
+
 }
