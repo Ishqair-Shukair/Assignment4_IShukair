@@ -21,4 +21,13 @@ public class UndoCommand implements Command {
         }
     }
 
+    @Override public void undo(Turtle t) {
+        if (!redoStack.isEmpty()) {
+            Command cmd = redoStack.pop();
+            cmd.execute(t);
+            undoStack.push(cmd);
+        } else {
+            System.out.println("Nothing to redo.");
+        }
+    }
 }
