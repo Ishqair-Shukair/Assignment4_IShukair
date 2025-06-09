@@ -1,7 +1,7 @@
 package com.example.turtle.command;
 import com.example.turtle.Turtle;
 
-public class ShowCommand {
+public class ShowCommand implements Command {
     @Override public void execute(Turtle t) {
         System.out.print(t.show());
     }
