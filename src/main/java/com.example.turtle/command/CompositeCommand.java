@@ -10,4 +10,16 @@ public class CompositeCommand implements Command {
         children.add(c);
         return this;
     }
+    @Override
+    public void execute(Turtle t) {
+        for (Command c : children) {
+            c.execute(t);
+        }
+    }
+    @Override
+    public void undo(Turtle t) {
+        for (int i = children.size() - 1; i >= 0; i--) {
+            children.get(i).undo(t);
+        }
+    }
 }
