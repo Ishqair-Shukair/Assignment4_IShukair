@@ -11,4 +11,14 @@ public class Turtle {
         this.canvas = canvas;
         this.pen = new Pen();
     }
+
+    public Pen getPen() { return pen; }
+
+    public void move(double dist) {
+        double rad = Math.toRadians(heading);
+        double nx = x + dist * Math.cos(rad);
+        double ny = y + dist * Math.sin(rad);
+        pen.up();
+        x = nx; y = ny;
+    }
 }
